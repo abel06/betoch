@@ -1,0 +1,36 @@
+<app-grid [template]="gridTemplate">
+    <ng-template #gridTemplate>
+        <div class="grid-item" #dynamicTemplate *ngFor="let property of properties">
+            <mat-card class="property-card">
+               
+
+       
+                <ngx-slick-carousel class="carousel" 
+                #slickModal="slick-carousel" 
+                [config]="slideConfig" 
+                (init)="slickInit($event)"
+                (breakpoint)="breakpoint($event)"
+                (afterChange)="afterChange($event)"
+                (beforeChange)="beforeChange($event)">
+                    <div *ngFor="let photo of property.photos "> <img mat-card-image [src]="photo.urls.medium" [alt]="property.title"></div>
+                    <!-- <div><img src="image2.jpg" alt="Image 2"></div>
+                    <div><img src="image3.jpg" alt="Image 3"></div> -->
+                    <!-- Add more slides as needed -->
+             
+                </ngx-slick-carousel>
+                <mat-card-content>
+                    <h2 class="property-title">{{ property.title }}</h2>
+                    <p class="property-description">{{ property.description }}</p>
+                    <div class="property-details">
+                        <p class="property-price">{{ property.price }}</p>
+                        <p class="property-location">{{ property.location }}</p>
+                        <p class="property-bedrooms">{{ property.bedrooms }} Bedrooms</p>
+                    </div>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button color="primary">View Details</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </ng-template>
+</app-grid>
