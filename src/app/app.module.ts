@@ -19,6 +19,10 @@ import { GridComponent } from './components/grid/grid.component';
 import { CellTemplateDirective } from './directives/cell-template.directive';
 import { GridContainerDirective } from './directives/grid-container.directive';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { SliderComponent } from './components/slider/slider.component';
+import { PropertyComponent } from './components/property/property.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,9 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     NavbarComponent,
     GridComponent,
     CellTemplateDirective,
-    GridContainerDirective 
+    GridContainerDirective,
+    SliderComponent,
+    PropertyComponent 
   ],
   imports: [
     BrowserModule,
@@ -41,8 +47,10 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     MatIconModule,
     MatGridListModule,
     MatCardModule,
+    MatPaginatorModule,
     HttpClientModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    FontAwesomeModule
     
   ],
   providers: [HttpClient, {

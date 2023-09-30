@@ -1,0 +1,259 @@
+.property-description,
+.property-title {
+
+  width: 100%;
+  /* Set a fixed width for the container */
+  display: -webkit-box;
+  /* Required for WebKit-based browsers */
+  -webkit-line-clamp: 1;
+  /* Limit the text to three lines */
+  -webkit-box-orient: vertical;
+  /* Set the text to flow vertically */
+  overflow: hidden;
+
+  p {
+    margin: 0;
+    /* Remove default margin for the text */
+  }
+}
+
+.property-icons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  // max-width: 200px;
+  margin: auto;
+  color: #a7a7a7;
+  // :nth-child(1){
+  //     color:#4c6d9b ;
+
+  // }
+  // :nth-child(2){
+  //     color: #99cfd2 ;
+
+  // }
+  // :nth-child(3){
+  //     color:#0091fb ;
+
+  // }
+  // :nth-child(4){
+  //     color:#edb3bd ;
+
+  // }
+
+  // :nth-child(5){
+  //     color:#005163 ;
+
+  // }
+}
+
+.property-title {
+  color: #091a2b;
+  font-weight: bolder;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+
+.property-icon {
+  font-size: 16px;
+}
+
+.location {
+  display: flex;
+  color: #a7a7a7;
+  gap: 5px;
+
+  .text {
+    font-size: 11px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+}
+
+.top-content {
+  display: flex;
+  margin-top: 5px;
+
+  .left-container {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 7px;
+
+  }
+
+  :nth-child(2) {}
+
+}
+
+.headerDivider {
+  // border-left:1px solid #a7a7a7; 
+  border-right: 2px solid #a7a7a7;
+  border-radius: 5px;
+  height: 65px;
+}
+
+.right-container {
+  // margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 35%;
+  gap: 5px;
+  margin-top: 5px;
+
+  :nth-child(1) {
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  :nth-child(2) {
+    font-size: 16px;
+    // color: #153051;
+    color: #4b6584;
+    font-weight: bolder;
+  }
+}
+
+hr.solid {
+  border-top: 1px solid #bbb;
+}
+
+.bottom-content {
+  margin-top: 10px;
+}
+
+.icon-container {
+  background: #4b6584;
+  height: 35px;
+  width: 40px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0px 8px 5px #cbcbcb;
+  font-size: 14px;
+
+  p {
+    font-size: 10px;
+    margin: 0;
+  }
+}
+
+.property-text {
+  font-size: 11px;
+  color: #a7a7a7;
+}
+
+.slider-container {
+  // height: 200px;
+}
+
+
+
+// @media all and (min-width: 480px) {
+//   .deskContent {display:block;}
+//   .phoneContent {display:none;}
+// }
+
+@media(min-width: 479px) {
+  .deskContent {display:block !important;}
+  .phoneContent {display:none !important;}
+
+}
+
+@media(max-width: 479px) {
+  .phoneContent {display:flex !important;}
+  
+  .deskContent {display:none !important;}
+
+}
+
+@media(max-width:479px){
+  .property-card {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+  
+    .property-icons{
+      justify-content: flex-start;
+    }
+    .img-container {
+      // background: blue;
+      height: 130px;
+      // flex: 0 0 150px;
+  
+      // margin: auto;
+      width: 150px;
+  
+      img {
+        height: 130px !important;
+        width: 150px !important;
+      }
+    }
+  
+    .content-container {
+      // background: red;
+      height: 130px;
+      width: 100%;
+      display: flex;
+  
+  
+      .icon-container {
+        background: #4b6584;
+        height: 25px;
+        width: 25px;
+        font-size: 10px;
+      }
+  
+      .content {
+        padding: 5px;
+        margin: auto;
+      }
+  
+      .property-title {
+        font-size: 13px;
+      }
+  
+      .top-content {
+        gap: 2px;
+        margin: 0;
+  
+        .left-container {
+          margin-top: 0;
+          gap: 4px;
+        }
+      }
+  
+      .bottom-content {
+        margin-top: 2px;
+      }
+  
+      .right-container {
+        :nth-child(2) {
+          font-size: 13px;
+        }
+  
+        :nth-child(1) {
+  
+  
+          font-size: 10px;
+        }
+  
+  
+      }
+  
+      .location {
+        font-size: 11px;
+      }
+  
+      .text {
+        font-size: 9px;
+      }
+    }
+  
+  }
+}

@@ -1,0 +1,111 @@
+<mat-card class="property-card deskContent" *ngIf="property.photos.length>0">
+
+    <app-slider [template]="sliderTemplate">
+        <ng-template #sliderTemplate>
+            <div *ngFor="let photo of property.photos " class="keen-slider__slide slide"> <img class="mat-card-img"
+                    [src]="photo.urls.small" [alt]="property.title" width="100%"></div>
+        </ng-template>
+    </app-slider>
+    <mat-card-content>
+
+
+
+        <div class="top-content">
+            <div class="left-container">
+                <div class="property-title">{{ property.propertyType.name }}</div>
+
+                <div class="location">
+                    <i class="fa-solid fa-location-dot property-icon mt-2"></i>
+
+                    <div class="text"> {{property.location.address}}, {{property.location.city.name}}</div>
+                </div>
+                <div class="property-text"> {{property.surface}}</div>
+            </div>
+            <div class="headerDivider"></div>
+            <div class="right-container">
+                <div>Price</div>
+                <div>{{property.price.formattedPrice}}</div>
+            </div>
+        </div>
+
+
+
+        <div class="bottom-content">
+            <hr class="solid">
+            <div class="property-icons">
+
+                <div class="icon-container">
+                    <i class="fa-solid fa-bed"></i>
+                    <p>{{property.bedrooms}}</p>
+                </div>
+                <div class="icon-container"> <i class="fa-solid fa-shower"></i>
+                    <p>{{property.bathrooms}}</p>
+                </div>
+                <div class="icon-container" *ngIf="property.parking"><i class="fa-solid fa-square-parking"></i>
+                    <p>{{property.parking}}</p>
+                </div>
+                <div class="icon-container" *ngIf="property.floor"><i class="fa-solid fa-stairs"></i>
+                    <p>{{property.floor}}</p>
+                </div>
+            </div>
+
+        </div>
+    </mat-card-content>
+</mat-card>
+
+
+ <mat-card class="property-card phoneContent" *ngIf="property.photos.length>0">
+    <div class="img-container"> <app-slider [template]="sliderTemplate">
+            <ng-template #sliderTemplate>
+                <div *ngFor="let photo of property.photos " class="keen-slider__slide slide"> <img class="mat-card-img"
+                        [src]="photo.urls.small" [alt]="property.title" width="100%"></div>
+            </ng-template>
+        </app-slider></div>
+    <div class="content-container">
+
+        <div class="content">
+
+
+            <div class="top-content">
+                <div class="left-container">
+                    <div class="property-title">{{ property.propertyType.name }}</div>
+
+                    <div class="location">
+                        <i class="fa-solid fa-location-dot property-icon mt-2"></i>
+
+                        <div class="text"> {{property.location.address}}, {{property.location.city.name}}</div>
+                    </div>
+     
+                </div>
+                <div class="headerDivider"></div>
+                <div class="right-container">
+                    <div>Price</div>
+                    <div>{{property.price.formattedPrice}}</div>
+                </div>
+            </div>
+
+
+
+            <div class="bottom-content">
+                <hr class="solid">
+                <div class="property-icons">
+
+                    <div class="icon-container">
+                        <i class="fa-solid fa-bed"></i>
+                        <p>{{property.bedrooms}}</p>
+                    </div>
+                    <div class="icon-container"> <i class="fa-solid fa-shower"></i>
+                        <p>{{property.bathrooms}}</p>
+                    </div>
+                    <div class="icon-container" *ngIf="property.parking"><i class="fa-solid fa-square-parking"></i>
+                        <p>{{property.parking}}</p>
+                    </div>
+                    <div class="icon-container" *ngIf="property.floor"><i class="fa-solid fa-stairs"></i>
+                        <p>{{property.floor}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</mat-card> 

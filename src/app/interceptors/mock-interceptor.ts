@@ -40,11 +40,13 @@ export class MockDataInterceptor implements HttpInterceptor {
   private getPaginatedData(req: HttpRequest<any>, data: any[]): any {
     const page = {
       number: Number(req.params.get('page') || 0),
-      size: Number(req.params.get('size') || 10),
+      perPage: Number(req.params.get('perPage') || 10),
     };
-    const start = page.number * page.size;
-    const end = start + page.size;
+ 
+    const start = page.number * page.perPage;
+    const end = start + page.perPage;
     const pageData = data.slice(start, end);
+    console.log(start,end)
     return {
       _embedded: {
         elements: pageData,
@@ -56,7 +58,7 @@ export class MockDataInterceptor implements HttpInterceptor {
       },
       page: {
         totalElements: data.length,
-        totalPages: Math.ceil(data.length / page.size),
+        totalPages: Math.ceil(data.length / page.perPage),
       },
     };
   }
